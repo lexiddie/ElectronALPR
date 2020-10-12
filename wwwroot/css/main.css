@@ -1,0 +1,291 @@
+/*------------------------------------
+    Content
+------------------------------------*/
+@font-face {
+  font-family: 'Fira Sans';
+  src: url("../fonts/FiraSans/FiraSans-Regular.ttf");
+}
+
+.main-reloading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../assets/icon/avantie.gif") 50% 50% no-repeat rgba(255, 255, 255, 0.5);
+}
+
+.page-error {
+  height: 100% !important;
+  width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-error > img {
+  height: 30% !important;
+  width: 30% !important;
+}
+
+.page-error > label {
+  font-family: "Fira Sans" !important;
+  height: auto;
+  width: 100%;
+  text-align: center !important;
+  line-height: 150% !important;
+  font-size: 25px !important;
+}
+
+.page-error > label:last-child {
+  font-size: 15px !important;
+}
+
+.main-header {
+  height: 50px;
+  width: 100%;
+  background-color: white !important;
+  border-color: black !important;
+  border-bottom: 0.5px solid;
+}
+
+.main-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  float: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  height: 100%;
+  width: 90%;
+  font-family: "Fira Sans" !important;
+  font-size: 20px;
+  padding: 0px 15px 0px 15px;
+}
+
+.main-title > label:first-child {
+  margin: 5px 0 0 15px !important;
+}
+
+.main-title > label:last-child {
+  margin: 5px 15px 0 10px !important;
+}
+
+.main-side {
+  background-color: rebeccapurple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: auto;
+}
+
+.main-side > button {
+  background-color: cyan;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100% !important;
+  width: 100% !important;
+  color: black !important;
+  border: 0;
+  border-radius: 0;
+  z-index: 1;
+}
+
+.main-side > button:hover {
+  cursor: pointer;
+  background-color: grey !important;
+}
+
+.main-side > button img {
+  margin-left: -15px;
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+}
+
+.main-side > button span {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.main-content {
+  height: 100%;
+  width: 100%;
+}
+
+.main-page {
+  height: calc(100% - 50px);
+  width: 100%;
+  float: right;
+  position: fixed !important;
+  z-index: 1 !important;
+  bottom: 0;
+  right: 0;
+  background-image: url("../assets/photo/background.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.home-page {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.home-page > div:first-child {
+  height: 300px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 50px;
+  background-color: white !important;
+}
+
+.home-page > div:first-child > img {
+  height: 200px;
+  width: 200px;
+}
+
+.home-page > div:first-child > img:last-child {
+  height: 0;
+  width: 0;
+}
+
+.home-page > div:first-child > button {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  vertical-align: middle;
+  border-color: transparent;
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+.home-page > div:last-child {
+  height: 60%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.home-page > div:last-child > div:first-child {
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+}
+
+.home-page > div:last-child > div:first-child > img {
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 30px;
+  width: 80%;
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.home-page > div:last-child > div:last-child {
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+}
+
+.home-page > div:last-child > div:last-child > label {
+  font-family: "Fira Sans" !important;
+  color: black;
+  width: 100%;
+  text-align: left;
+  line-height: 150%;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/*# sourceMappingURL=main.css.map */

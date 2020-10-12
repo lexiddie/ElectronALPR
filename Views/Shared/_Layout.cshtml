@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"]</title>
+    <partial name="_StylesPartial"/>
+    <link rel="icon" type="image/x-icon" href="favicon.png"/>
+</head>
+<body>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <partial name="_ScriptsPartial"/>
+    <partial name="_Header"></partial>
+    <div class="main-reloading" id="main-reloading" runat="server"></div>
+    <div class="main-content">
+        <div class="main-page" id="main-page">
+            @RenderBody()
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            console.log('Checking this is auto reloading, is changed');
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Modals", required: false)
+</body>
+</html>

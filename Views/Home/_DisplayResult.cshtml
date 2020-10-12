@@ -1,0 +1,13 @@
+@model ElectronALPR.ViewModels.CarViewModel
+<div>
+    <img alt="" src="@Model.Base64String"/>
+</div>
+<div>
+    <label>Plate number: @Model.Car.Plate</label>
+    <label>Region: @Model.Car.Region</label>
+    <label>Color: @Model.Car.Color</label>
+    <label>Make: @Model.Car.Make</label>
+    <label>Model: @Model.Car.MakeModel</label>
+    <label>Body Type: @Model.Car.BodyType</label>
+    <label>Year: @Model.Car.Year</label>
+</div>
