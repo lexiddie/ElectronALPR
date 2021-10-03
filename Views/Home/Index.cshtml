@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "ElectronALPR";
+}
+
+<div class="home-page" id="home-page">
+	<div id="first-page">
+		<input type="file" style="display: none" accept="image/png, image/jpeg"/>
+		<button id="button-upload" type="submit"></button>
+		<img alt="" src="~/assets/icon/upload.png"/>
+		<img id="main-image" style="display: none" alt="" src=""/>
+	</div>
+	<div id="second-page" style="display: none"></div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		const reload = $('div[id$=main-reloading]');
+		const btnUpload = $('#button-upload');
+		const btnRefresh = $('button[id$=button-refresh]');
+		const homePage = $('#home-page');
+		const mainImage = $('#main-image');
+		const firstPage = $('#first-page');
+		const secondPage = $('#second-page');
+		reload.hide();
+		console.log('This is home page');
+		
+		btnUpload.click(function() {
+			console.log(`This is clicked`);
+			$('input').trigger('click', function() {
+				console.log(`After clicked`);
+			});
+		});
+		
+		btnRefresh.click(function() {
+			firstPage.show();
+			secondPage.empty().hide();
+			mainImage.removeAttr('src');
+		});
+		
+		function getBase64String() {
+			reload.show();
+			const data = mainImage.attr('src');
+			// alert(data);
+			const url = '@Url.Action("UploadImageBase", "Home")';
+			$.ajax({
+				type: 'POST',
+				url: url,
+				cache: true,
+				data: { base64String: data },
+				success: function(res) {     
+					reload.hide();
+					firstPage.hide();
+					secondPage.show();
+					secondPage.empty().append(res);
+				},
+				error: function(error) {
+					loadErrorPage();
+					console.log('It is error!!!');
+					console.log(error);
+					bootbox.alert('The Image resolution is too big').find('.modal-content').css({
+						'margin-top': function (){
+							const w = $( window ).height();
+							const b = $(".modal-dialog").height();
+							const h = (w - b) / 2;
+							return h + "px";
+						},
+						'width': '39rem'
+					}); 
+				}
+			});
+		}
+		
+		homePage.on('change', function (event) {
+			event.preventDefault();
+			try {
+				const reader = new FileReader();
+				reader.onload = function (event) {
+					mainImage.attr('src', event.target.result);
+					getBase64String();
+				}
+				reader.readAsDataURL(event.target.files[0]);
+				console.log('This image is working');
+			} catch (err) {
+				console.log(`This is cancel`);
+			}
+		});
+		
+		function loadErrorPage() {
+			const url = '@Url.Action("ErrorPage", "Home")';
+			$.ajax({
+				type: 'GET',
+				url: url,
+				cache: true
+			}).done(function(res) {
+				firstPage.hide();
+				secondPage.empty().append(res);
+				secondPage.show();
+				console.log('Error handling is working');
+				reload.hide();
+			})
+		}
+	});
+</script>
